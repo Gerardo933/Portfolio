@@ -1,0 +1,10 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "🛠 Running ESLint..."
+yarn lint || { echo "❌ ESLint failed. Commit aborted." ; exit 1; }
+
+echo "⚡ Running build..."
+yarn build || { echo "❌ Build failed. Commit aborted." ; exit 1; }
+
+echo "✅ Lint and build passed. Commit can proceed."
