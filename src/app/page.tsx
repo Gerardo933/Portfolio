@@ -1,5 +1,7 @@
+'use client';
 import { Home } from "@/components/Home/Home";
 
-export default function HomeScreen() {
+const HomeScreen = () =>  {
   return <Home/>;
 };
+export default HomeScreen;
