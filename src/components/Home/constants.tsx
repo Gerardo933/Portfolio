@@ -12,6 +12,7 @@ export const TITLES = {
   ALT_AVATAR: "Foto de perfil",
   NAME: "Gerardo Flores N.",
   JOB: "Front end developer",
+  Tecnologys: 'React | Next.js | TypeScript',
   KNOWLEDGE: "Conocimientos",
   DESCRIPTION:
     "¡Hola! Soy un desarrollador frontend apasionado por crear experiencias digitales modernas, accesibles y rápidas. Trabajo principalmente con React, Next.js y TypeScript, usando herramientas como Redux para el manejo del estado, consumo de apis con api restful, emotion para estilos flexibles y reutilizables, Bootstrap, tailwind, responsive, etc. Además con experiencia desarrollando con story-book para design system. Me enfoco en la calidad del código, el rendimiento y la escalabilidad, sin dejar de lado el diseño y la experiencia de usuario. Siempre estoy aprendiendo y buscando nuevos retos que me permitan crecer como profesional. ",

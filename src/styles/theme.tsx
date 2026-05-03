@@ -13,7 +13,7 @@ export const theme = {
     text: "#e6f1ff",
     textDim: "#8aa0b3",
     textMuted: "#5f7385",
-
+    sub_frame: "#FF94AD",
     success: "#00ff9c",
     warning: "#ffcc00",
     error: "#ff4d6d",
@@ -24,10 +24,10 @@ export const theme = {
     mono: "'JetBrains Mono', monospace",
   },
   backGrounds: {
-    cyan: "linear-gradient(90deg, #0f1620 0%, #0a1f2a 40%, #00d9ff 100%)",
+    yellow: "linear-gradient(0deg,rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(221, 244, 156, 0.69) 100%)",
+    cyan: "linear-gradient(0deg,rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(148, 251, 255, 0.69) 100%)",
     green:
-      "linear-gradient(0deg,rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(191, 255, 148, 1) 100%)",
-    yellow: "linear-gradient(90deg, #0f1620 0%, #2a2610 40%, #ffcc00 100%)",
+      "linear-gradient(0deg,rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(219, 255, 148, 0.69) 100%)",
   },
 };
 

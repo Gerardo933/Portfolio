@@ -4,7 +4,7 @@ import {
 } from "@/styles/style";
 import { TITLES } from "@/components/Home/constants";
 import { theme } from "@/styles/theme";
-export const ResumeInformation = () => {
+export const ExperienceSection = () => {
   return (
     <ContainerFlex
       JustifyContent="start"
@@ -13,7 +13,7 @@ export const ResumeInformation = () => {
       Padding="24px 12px"
       Gap="24px"
     >
-      <ContainerFlex BackGround={theme.backGrounds.yellow} Width="10%" />
+      <ContainerFlex BackGround={theme.backGrounds.cyan} Width="10%" />
       <ContainerFlex JustifyContent="start" AlignItems="start" FlexDirection="column" >
         <Text
           FontFamily={theme.fonts.title}

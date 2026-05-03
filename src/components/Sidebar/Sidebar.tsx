@@ -10,8 +10,12 @@ import {
 import { navItems } from "@/components/Sidebar/Constants.utils";
 import { TITLES } from "@/components/Home/constants";
 
-export const Sidebar = () => {
-  const [active, setActive] = useState("perfil");
+interface SidebarProps {
+  activeSection: string;
+  onNavClick: (id: string) => void;
+}
+
+export const Sidebar = ({ activeSection, onNavClick }: SidebarProps) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -24,9 +28,9 @@ export const Sidebar = () => {
       {navItems.map(({ id, label, icon: Icon }) => (
         <NavItem
           key={id}
-          $active={active === id}
+          $active={activeSection === id}
           $expanded={expanded}
-          onClick={() => setActive(id)}
+          onClick={() => onNavClick(id)}
         >
           <NavIcon>
             <Icon />
