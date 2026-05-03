@@ -18,6 +18,9 @@ export interface IContainerFlex {
   Margin?: string;
   Radius?: string;
   GridColumn?: string;
+  OverFlowY?: string;
+  ScrollSnapType?: string;
+  ScrollSnapAlign?: string;
 }
 export interface IText {
   FontSize?: string;
@@ -30,6 +33,7 @@ export interface IText {
   BackGround?: string;
   BackGroundClip?: string;
   FillColor?: string;
+  Padding?: string;
 
 }
 export interface IFigure {
