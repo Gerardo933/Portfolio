@@ -189,3 +189,10 @@ export const NavLabel = styled.span<{ $expanded: boolean }>`
   opacity: ${({ $expanded }) => $expanded ? 1 : 0};
   transition: opacity 0.15s ease 0.05s;
 `;
+
+export const Section = styled.section`
+  height: 100vh;
+  width: 100%;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+`;
