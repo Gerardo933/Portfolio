@@ -1,14 +1,14 @@
-'use client';
+"use client";
 import { useEffect, useRef, useState } from "react";
 import { ContainerFlex, Section } from "@/styles/style";
 import { ResumeInformation } from "@/components/Home/ResumeInformation";
 import { ExperienceSection } from "@/components/Home/ExperienceSection";
 import { Sidebar } from "@/components/Sidebar/Sidebar";
-
-const SECTION_IDS = ['resumen', 'experiencia'];
+import { SECTION_IDS } from "@/components/Sidebar/Constants.utils";
+import { ProfileSection } from "@/components/Home/ProfileSection";
 
 export const Home = () => {
-  const [activeSection, setActiveSection] = useState('resumen');
+  const [activeSection, setActiveSection] = useState("profile");
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export const Home = () => {
           }
         });
       },
-      { root: container, threshold: 0.5 }
+      { root: container, threshold: 0.5 },
     );
 
     SECTION_IDS.forEach((id) => {
@@ -36,7 +36,7 @@ export const Home = () => {
 
   const handleNavClick = (id: string) => {
     const el = document.getElementById(id);
-    el?.scrollIntoView({ behavior: 'smooth' });
+    el?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -57,10 +57,13 @@ export const Home = () => {
         JustifyContent="start"
         AlignItems="start"
       >
-        <Section id="resumen">
+        <Section id="profile">
+          <ProfileSection />
+        </Section>
+        <Section id="resume">
           <ResumeInformation />
         </Section>
-        <Section id="experiencia">
+        <Section id="experience">
           <ExperienceSection />
         </Section>
       </ContainerFlex>

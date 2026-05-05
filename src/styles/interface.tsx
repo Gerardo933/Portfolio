@@ -45,6 +45,11 @@ export interface IFigure {
   Margin?: string;
   Cursor?: string;
   HasHover?: boolean;
+  PRight?: string;
+  PBottom?: string;
+  PLeft?: string;
+  PTop?: string;
+  ZIndex?: string;
 }
 
 export interface IImage {

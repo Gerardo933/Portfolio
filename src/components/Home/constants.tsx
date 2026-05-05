@@ -12,10 +12,19 @@ export const TITLES = {
   ALT_AVATAR: "Foto de perfil",
   NAME: "Gerardo Flores N.",
   JOB: "Front end developer",
-  Tecnologys: 'React | Next.js | TypeScript',
+  Tecnologys: "Interfaces rápidas, escalables y con foco en UX",
   KNOWLEDGE: "Conocimientos",
+  LITTLE_RESUME:
+    "Construyo interfaces rápidas, escalables y enfocadas en experiencia de usuario.",
+  CORE: "Core: ",
+  CORE_DESCRIPTION: "Next.js · React · TypeScript",
+  TOOLS: "Tools: ",
+  TOOLS_DESCRIPTION: "Redux · Emotion · Storybook · Gitt",
+  STACK_DESCRIPTION:
+    " Next.js · TypeScript · Redux · Emotion · RestApi · Story-book · git",
+
   DESCRIPTION:
-    "¡Hola! Soy un desarrollador frontend apasionado por crear experiencias digitales modernas, accesibles y rápidas. Trabajo principalmente con React, Next.js y TypeScript, usando herramientas como Redux para el manejo del estado, consumo de apis con api restful, emotion para estilos flexibles y reutilizables, Bootstrap, tailwind, responsive, etc. Además con experiencia desarrollando con story-book para design system. Me enfoco en la calidad del código, el rendimiento y la escalabilidad, sin dejar de lado el diseño y la experiencia de usuario. Siempre estoy aprendiendo y buscando nuevos retos que me permitan crecer como profesional. ",
+    "Desarrollador frontend con experiencia en React, Next.js y TypeScript.Trabajo con Redux e integración de APIs REST.Enfocado en rendimiento, escalabilidad y buenas prácticas.",
 };
 
 export const RadiantTitles = {
@@ -36,3 +45,9 @@ export const KNOWLEDGE = [
   { title: "Git", image: Git },
   { title: "RestFull", image: Rest },
 ];
+
+export const ALT_IMAGES = {
+  GIT: "gitHub",
+  LID: 'linkedin',
+  MAIL: 'mail'
+}

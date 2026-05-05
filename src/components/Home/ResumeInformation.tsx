@@ -13,7 +13,7 @@ export const ResumeInformation = () => {
       Padding="24px 12px"
       Gap="24px"
     >
-      <ContainerFlex BackGround={theme.backGrounds.yellow} Width="10%" />
+      <ContainerFlex BackGround={theme.backGrounds.green} Width="10%" />
       <ContainerFlex JustifyContent="start" AlignItems="start" FlexDirection="column" >
         <Text
           FontFamily={theme.fonts.title}
