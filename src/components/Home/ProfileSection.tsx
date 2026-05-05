@@ -1,10 +1,9 @@
-import { AvatarContainer } from "@/components/Avatar/AvatarStyle";
-import { ContainerFlex, Text, Image, Figure } from "@/styles/style";
+import { ContainerFlex, Text, Image, Divider } from "@/styles/style";
 import { TITLES } from "@/components/Home/constants";
 import { theme } from "@/styles/theme";
 import FrontLogo from "@/images/frontLogo.png";
-import Avatar from "@/images/avatar.jpg";
-import { ContactContainer } from "@/components/Home/ContactContainer";
+import { ProfileCard } from "@/components/Avatar/AvatarComponent";
+import { StackSections } from "@/components/Home/StackContainer/Stack";
 export const ProfileSection = () => {
   return (
     <ContainerFlex
@@ -14,24 +13,19 @@ export const ProfileSection = () => {
       Padding="24px 12px"
       Gap="24px"
       FlexDirection="column"
+      BackGround="white"
     >
-      <ContainerFlex Height="60px">
-        <ContainerFlex AlignItems="end" JustifyContent="end">
-          <ContactContainer />
-        </ContainerFlex>
-      </ContainerFlex>
-      <ContainerFlex>
-        <ContainerFlex Width="10%" AlignItems="start" Padding="8px">
-          <AvatarContainer>
-            <Figure Radius="50%">
-              <Image src={Avatar} alt={TITLES.NAME} objectFit="cover" fill />
-            </Figure>
-          </AvatarContainer>
+      <Divider variant="glow" />
+
+      <ContainerFlex ColumnGap="24px" Gap="24px">
+        <ContainerFlex Width="mas-content" AlignItems="start" Padding="8px">
+          <ProfileCard />
         </ContainerFlex>
         <ContainerFlex
           JustifyContent="start"
           AlignItems="start"
           FlexDirection="column"
+          Gap="24px"
         >
           <ContainerFlex
             JustifyContent="start"
@@ -46,6 +40,7 @@ export const ProfileSection = () => {
               Position="relative"
               Width="max-content"
               Height="max-content"
+              Gap="16px"
             >
               <Text
                 FontFamily={theme.fonts.title}
@@ -55,19 +50,14 @@ export const ProfileSection = () => {
               >
                 {TITLES.NAME}
               </Text>
+              <Divider variant="dots" />
               <Text
                 FontWeight="500"
                 FontFamily={theme.fonts.title}
-                Color={theme.colors.sub_frame}
+                Color={theme.colors.accent}
+                FontSize="2rem"
               >
                 {TITLES.JOB}
-              </Text>
-              <Text
-                FontWeight="500"
-                FontFamily={theme.fonts.title}
-                Color={theme.colors.sub_frame}
-              >
-                {TITLES.Tecnologys}
               </Text>
             </ContainerFlex>
             <ContainerFlex Width="max-content" AlignItems="start">
@@ -84,10 +74,16 @@ export const ProfileSection = () => {
             FlexDirection="column"
             JustifyContent="start"
             AlignItems="start"
-            Gap="24px"
-            Padding="16px 0"
             Height="max-content"
           >
+            <Text
+              FontWeight="500"
+              FontFamily={theme.fonts.body}
+              Color={theme.colors.bg}
+              FontSize="1.5rem"
+            >
+              {TITLES.Tecnologys}
+            </Text>
             <Text
               FontFamily={theme.fonts.body}
               Color={theme.colors.bg}
@@ -103,54 +99,7 @@ export const ProfileSection = () => {
               {TITLES.DESCRIPTION}
             </Text>
           </ContainerFlex>
-          <ContainerFlex
-            FlexDirection="column"
-            JustifyContent="start"
-            AlignItems="start"
-            Gap="24px"
-            Padding="16px 0"
-            Height="max-content"
-          >
-            <Text
-              FontFamily={theme.fonts.body}
-              Color={theme.colors.bg}
-              FontSize="1.5rem"
-              FontWeight="700"
-            >
-              {TITLES.CORE}
-            </Text>
-            <Text
-              FontFamily={theme.fonts.body}
-              Color={theme.colors.bg}
-              FontSize="1.5rem"
-            >
-              {TITLES.CORE_DESCRIPTION}
-            </Text>
-          </ContainerFlex>
-          <ContainerFlex
-            FlexDirection="column"
-            JustifyContent="start"
-            AlignItems="start"
-            Gap="24px"
-            Padding="16px 0"
-            Height="max-content"
-          >
-            <Text
-              FontFamily={theme.fonts.body}
-              Color={theme.colors.bg}
-              FontSize="1.5rem"
-              FontWeight="700"
-            >
-              {TITLES.TOOLS}
-            </Text>
-            <Text
-              FontFamily={theme.fonts.body}
-              Color={theme.colors.bg}
-              FontSize="1.5rem"
-            >
-              {TITLES.TOOLS_DESCRIPTION}
-            </Text>
-          </ContainerFlex>
+          <StackSections />
         </ContainerFlex>
       </ContainerFlex>
     </ContainerFlex>

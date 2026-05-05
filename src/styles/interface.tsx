@@ -66,3 +66,8 @@ export interface IImage {
   onMouseLeave?: () => void;
   alt: string;
 }
+
+export interface IHudCard {
+  Height?: string;
+  Width?: string;
+}

@@ -22,7 +22,8 @@ export const TITLES = {
   TOOLS_DESCRIPTION: "Redux · Emotion · Storybook · Gitt",
   STACK_DESCRIPTION:
     " Next.js · TypeScript · Redux · Emotion · RestApi · Story-book · git",
-
+    STACK: 'Stack',
+  AVIABLE: "Disponble para trabajo",
   DESCRIPTION:
     "Desarrollador frontend con experiencia en React, Next.js y TypeScript.Trabajo con Redux e integración de APIs REST.Enfocado en rendimiento, escalabilidad y buenas prácticas.",
 };
@@ -48,6 +49,9 @@ export const KNOWLEDGE = [
 
 export const ALT_IMAGES = {
   GIT: "gitHub",
-  LID: 'linkedin',
-  MAIL: 'mail'
-}
+  LID: "linkedin",
+  MAIL: "mail",
+  REACT: 'React',
+  NEXTJS: 'NextJs',
+  TYPESCRIPT: 'TypeScript'
+};

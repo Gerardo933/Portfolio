@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import styled from "@emotion/styled";
 
@@ -87,10 +87,101 @@ export const ButtonContact = styled.a`
     border-top: none;
   }
 
-  svg {
-    color: #0a0f14;
-    background: #ffffff;
-    border-radius: 6px;
-    padding: 4px;
+  img {
+    filter: brightness(0) invert(1);
+    opacity: 0.85;
+    transition: opacity 0.25s ease;
   }
+
+  &:hover img {
+    opacity: 1;
+  }
+`;
+export const Card = styled.div`
+  width: 280px;
+  height: 420px;
+  position: relative;
+
+  border-radius: 16px;
+  overflow: hidden;
+
+  background: radial-gradient(circle at center, #0a1a24, #050b10);
+
+  box-shadow:
+    0 0 25px rgba(0, 200, 255, 0.2),
+    inset 0 0 20px rgba(0, 200, 255, 0.1);
+
+  /* Bordes estilo HUD */
+  clip-path: polygon(
+    10% 0%,
+    90% 0%,
+    100% 10%,
+    100% 90%,
+    90% 100%,
+    10% 100%,
+    0% 90%,
+    0% 10%
+  );
+`;
+
+export const Background = styled.div`
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle, rgba(0, 200, 255, 0.15) 1px, transparent 1px),
+    radial-gradient(circle at center, rgba(0, 200, 255, 0.2), transparent 70%);
+
+  background-size: 40px 40px;
+
+  opacity: 0.4;
+`;
+export const ImageWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 75%;
+`;
+
+export const SideGlow = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 200, 255, 0.8),
+    transparent
+  );
+
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.6);
+`;
+
+export const Footer = styled.div`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  padding: 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  border-top: 1px solid rgba(0, 200, 255, 0.3);
+
+  background: rgba(0, 10, 15, 0.8);
+`;
+
+export const StatusDot = styled.div`
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+
+  background: #00ff88;
+
+  box-shadow: 0 0 8px #00ff88;
 `;
