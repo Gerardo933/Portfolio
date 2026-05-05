@@ -24,6 +24,7 @@ export const theme = {
     mono: "'JetBrains Mono', monospace",
   },
   backGrounds: {
+    blueHard: 'linear-gradient(0deg, rgba(0, 255, 200, 0.8), rgba(0, 140, 255, 0.8))',
     yellow: "linear-gradient(0deg,rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(221, 244, 156, 0.69) 100%)",
     cyan: "linear-gradient(0deg,rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(148, 251, 255, 0.69) 100%)",
     green:

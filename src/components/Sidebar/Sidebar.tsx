@@ -9,11 +9,7 @@ import {
 } from "@/styles/style";
 import { navItems } from "@/components/Sidebar/Constants.utils";
 import { TITLES } from "@/components/Home/constants";
-
-interface SidebarProps {
-  activeSection: string;
-  onNavClick: (id: string) => void;
-}
+import { SidebarProps } from "@/components/Sidebar/Interface";
 
 export const Sidebar = ({ activeSection, onNavClick }: SidebarProps) => {
   const [expanded, setExpanded] = useState(false);

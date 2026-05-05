@@ -24,8 +24,8 @@ export const ContainerFlex = styled.div<IContainerFlex>`
   border: ${(props) => props.Border || "hidden"};
   cursor: ${(props) => props.Cursor || "auto"};
   overflow-y: ${(props) => props.OverFlowY || ""};
-  scrollSnapType:  ${(props) => props.ScrollSnapType || ""};
-   scrollSnapAlign: ${(props) => props.ScrollSnapAlign || ""};
+  scrollsnaptype: ${(props) => props.ScrollSnapType || ""};
+  scrollsnapalign: ${(props) => props.ScrollSnapAlign || ""};
   @media (max-width: ${breakpoints.lg}) {
     align-items: stretch;
   }
@@ -82,7 +82,12 @@ export const Figure = styled.figure<IFigure>`
   position: ${(props) => props.Position || "relative"};
   overflow: ${(props) => props.Overflow || "hidden"};
   border-radius: ${(props) => props.Radius || "hidden"};
-  margin: ${(props) => props.Margin || "hidden"};
+  right: ${(props) => props.PRight || ""};
+  left: ${(props) => props.PLeft || ""};
+  top: ${(props) => props.PTop || ""};
+  z-index: ${(props) => props.ZIndex || ""};
+  bottom: ${(props) => props.PBottom || ""};
+  margin: ${(props) => props.Margin || ""};
   cursor: ${(props) => props.Cursor || "auto"};
   img {
     transition: transform 0.3s ease-in-out;
@@ -121,7 +126,7 @@ export const Image = ({
 };
 
 export const SidebarWrapper = styled.nav<{ $expanded?: boolean }>`
-  width: ${({ $expanded }) => $expanded ? '220px' : '56px'};
+  width: ${({ $expanded }) => ($expanded ? "220px" : "56px")};
   min-width: 56px;
   height: 100vh;
   position: sticky;
@@ -147,27 +152,34 @@ export const SidebarTitle = styled.span<{ $expanded: boolean }>`
   border-bottom: 1px solid rgba(0, 229, 255, 0.08);
   margin-bottom: 1rem;
   white-space: nowrap;
-  opacity: ${({ $expanded }) => $expanded ? 1 : 0};
+  opacity: ${({ $expanded }) => ($expanded ? 1 : 0)};
   transition: opacity 0.15s ease;
 `;
 
 export const NavItem = styled.button<{ $active: boolean; $expanded: boolean }>`
   display: flex;
   align-items: center;
-  gap: ${({ $expanded }) => $expanded ? '12px' : '0'};
-  padding: ${({ $expanded }) => $expanded ? '13px 24px' : '13px 0'};
-  justify-content: ${({ $expanded }) => $expanded ? 'flex-start' : 'center'};
+  gap: ${({ $expanded }) => ($expanded ? "12px" : "0")};
+  padding: ${({ $expanded }) => ($expanded ? "13px 24px" : "13px 0")};
+  justify-content: ${({ $expanded }) => ($expanded ? "flex-start" : "center")};
   width: 100%;
-  background: ${({ $active }) => $active ? 'rgba(0, 229, 255, 0.08)' : 'transparent'};
+  background: ${({ $active }) =>
+    $active ? "rgba(0, 229, 255, 0.08)" : "transparent"};
   border: none;
-  border-left: 3px solid ${({ $active }) => $active ? theme.colors.accent : 'transparent'};
-  color: ${({ $active }) => $active ? theme.colors.panelSoft : theme.colors.panelSoft};
+  border-left: 3px solid
+    ${({ $active }) => ($active ? theme.colors.accent : "transparent")};
+  color: ${({ $active }) =>
+    $active ? theme.colors.panelSoft : theme.colors.panelSoft};
   font-family: ${theme.fonts.body};
   font-size: 14px;
-  font-weight: ${({ $active }) => $active ? '600' : '400'};
+  font-weight: ${({ $active }) => ($active ? "600" : "400")};
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, border-left-color 0.2s ease,
-              gap 0.25s ease, padding 0.25s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-left-color 0.2s ease,
+    gap 0.25s ease,
+    padding 0.25s ease;
   text-align: left;
 
   &:hover {
@@ -186,7 +198,7 @@ export const NavIcon = styled.span`
 
 export const NavLabel = styled.span<{ $expanded: boolean }>`
   white-space: nowrap;
-  opacity: ${({ $expanded }) => $expanded ? 1 : 0};
+  opacity: ${({ $expanded }) => ($expanded ? 1 : 0)};
   transition: opacity 0.15s ease 0.05s;
 `;
 
