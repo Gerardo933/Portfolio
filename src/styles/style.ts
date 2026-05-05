@@ -44,6 +44,7 @@ export const ContainerFlex = styled.div<IContainerFlex>`
   @media (max-width: ${breakpoints.sm}) {
     gap: 0.5rem;
     justify-content: center;
+    flex-wrap: wrap;
   }
 `;
 export const ContainerGrid = styled.div<IContainerFlex>`
@@ -148,6 +149,22 @@ export const SidebarWrapper = styled.nav<{ $expanded?: boolean }>`
   overflow: hidden;
   transition: width 0.25s ease;
   box-shadow: 2px 0 16px rgba(0, 0, 0, 0.5);
+
+  @media (max-width: ${breakpoints.sm}) {
+    width: 100%;
+    min-width: unset;
+    height: 48px;
+    flex-direction: row;
+    position: fixed;
+    bottom: 0;
+    top: unset;
+    padding: 0;
+    border-right: none;
+    border-top: 1px solid rgba(0, 229, 255, 0.12);
+    z-index: 200;
+    justify-content: space-around;
+    align-items: center;
+  }
 `;
 
 export const AppHeader = styled.header`
@@ -180,6 +197,10 @@ export const SidebarTitle = styled.span<{ $expanded: boolean }>`
   white-space: nowrap;
   opacity: ${({ $expanded }) => ($expanded ? 1 : 0)};
   transition: opacity 0.15s ease;
+
+  @media (max-width: ${breakpoints.sm}) {
+    display: none;
+  }
 `;
 
 export const NavItem = styled.button<{ $active: boolean; $expanded: boolean }>`
@@ -213,6 +234,19 @@ export const NavItem = styled.button<{ $active: boolean; $expanded: boolean }>`
     color: ${theme.colors.accentSoft};
     border-left-color: rgba(0, 229, 255, 0.4);
   }
+
+  @media (max-width: ${breakpoints.sm}) {
+    padding: 0;
+    border-left: none;
+    border-bottom: 3px solid
+      ${({ $active }) => ($active ? theme.colors.accent : "transparent")};
+    flex-direction: column;
+    gap: 2px;
+    height: 100%;
+    justify-content: center;
+    font-size: 10px;
+    flex: 1;
+  }
 `;
 
 export const NavIcon = styled.span`
@@ -226,13 +260,23 @@ export const NavLabel = styled.span<{ $expanded: boolean }>`
   white-space: nowrap;
   opacity: ${({ $expanded }) => ($expanded ? 1 : 0)};
   transition: opacity 0.15s ease 0.05s;
+
+  @media (max-width: ${breakpoints.sm}) {
+    opacity: 1;
+    font-size: 9px;
+  }
 `;
 
 export const Section = styled.section`
   height: 100vh;
+  height: 100svh;
   width: 100%;
   flex-shrink: 0;
   scroll-snap-align: start;
+
+  @media (max-width: ${breakpoints.sm}) {
+    padding-bottom: 48px;
+  }
 `;
 
 export const Divider = styled.div<IDivider>`
@@ -326,6 +370,11 @@ export const HudCard = styled.div<IHudCard>`
   width: ${(props) => props.Width || "100%"};
   height: ${(props) => props.Height || "100%"};
   background: rgba(255, 255, 255, 0.02);
+
+  @media (max-width: ${breakpoints.sm}) {
+    width: 100%;
+    height: auto;
+  }
 
   /* Forma recortada */
   clip-path: polygon(

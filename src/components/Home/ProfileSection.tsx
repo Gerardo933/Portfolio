@@ -46,7 +46,7 @@ export const ProfileSection = () => {
                 FontFamily={theme.fonts.title}
                 Color={theme.colors.panel}
                 FontWeight="700"
-                FontSize="2.5rem"
+                FontSize="clamp(1.4rem, 5vw, 2.5rem)"
               >
                 {TITLES.NAME}
               </Text>
@@ -55,7 +55,7 @@ export const ProfileSection = () => {
                 FontWeight="500"
                 FontFamily={theme.fonts.title}
                 Color={theme.colors.accent}
-                FontSize="2rem"
+                FontSize="clamp(1.1rem, 4vw, 2rem)"
               >
                 {TITLES.JOB}
               </Text>
@@ -80,21 +80,21 @@ export const ProfileSection = () => {
               FontWeight="500"
               FontFamily={theme.fonts.body}
               Color={theme.colors.bg}
-              FontSize="1.5rem"
+              FontSize="clamp(0.9rem, 2.5vw, 1.5rem)"
             >
               {TITLES.Tecnologys}
             </Text>
             <Text
               FontFamily={theme.fonts.body}
               Color={theme.colors.bg}
-              FontSize="1.5rem"
+              FontSize="clamp(0.9rem, 2.5vw, 1.5rem)"
             >
               {TITLES.LITTLE_RESUME}
             </Text>
             <Text
               FontFamily={theme.fonts.body}
               Color={theme.colors.bg}
-              FontSize="1.5rem"
+              FontSize="clamp(0.9rem, 2.5vw, 1.5rem)"
             >
               {TITLES.DESCRIPTION}
             </Text>

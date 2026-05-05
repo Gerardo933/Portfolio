@@ -21,7 +21,7 @@ export const StackSections = () => {
       Height="max-content"
       FlexDirection="column"
     >
-      <ContainerFlex Width="40%" ColumnGap="16px" Gap="16px">
+      <ContainerFlex Width="min(40%, 100%)" ColumnGap="16px" Gap="16px">
         <Text
           FontFamily={theme.fonts.title}
           Color={theme.colors.accent}
@@ -34,7 +34,7 @@ export const StackSections = () => {
       </ContainerFlex>
       <ContainerFlex Gap="32px">
         <HudCard Width="50%" Height="160px">
-          <ContainerFlex Gap="16px" Width="24rem" Height="20px">
+          <ContainerFlex Gap="16px" Width="100%" Height="20px">
             <Text
               FontFamily={theme.fonts.title}
               FontWeight="700"
@@ -82,7 +82,7 @@ export const StackSections = () => {
           <HeaderLine />
         </HudCard>
         <HudCard Width="50%">
-          <ContainerFlex Gap="16px" Width="24rem">
+          <ContainerFlex Gap="16px" Width="100%">
             <Text
               FontFamily={theme.fonts.title}
               FontWeight="700"
