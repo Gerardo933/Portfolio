@@ -31,7 +31,7 @@ export const Sidebar = ({ activeSection, onNavClick }: SidebarProps) => {
           <NavIcon>
             <Icon />
           </NavIcon>
-          {expanded && <NavLabel $expanded={expanded}>{label}</NavLabel>}
+         {expanded && <NavLabel $expanded={expanded}>{label}</NavLabel>}
         </NavItem>
       ))}
     </SidebarWrapper>
