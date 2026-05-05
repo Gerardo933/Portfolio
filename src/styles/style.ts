@@ -1,11 +1,18 @@
 import NextImage, { ImageProps } from "next/image";
 import { extractInteger } from "@/hook/FormatUtils";
-import { IContainerFlex, IText, IFigure, IImage } from "@/styles/interface";
+import {
+  IContainerFlex,
+  IText,
+  IFigure,
+  IImage,
+  IHudCard,
+} from "@/styles/interface";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 import React from "react";
 import { breakpoints } from "@/styles/breakPoints";
 import { theme } from "@/styles/theme";
+import { IDivider } from "@/components/Sidebar/Interface";
 export const ContainerFlex = styled.div<IContainerFlex>`
   height: ${(props) => props.Height || "100%"};
   width: ${(props) => props.Width || "100%"};
@@ -74,6 +81,7 @@ export const Text = styled.span<IText>`
   background: ${(props) => props.BackGround || "auto"};
   -webkit-text-fill-color: ${(props) => props.FillColor || ""};
   padding: ${(props) => props.Padding || ""};
+  letter-spacing: 1px;
 `;
 
 export const Figure = styled.figure<IFigure>`
@@ -128,10 +136,10 @@ export const Image = ({
 export const SidebarWrapper = styled.nav<{ $expanded?: boolean }>`
   width: ${({ $expanded }) => ($expanded ? "220px" : "56px")};
   min-width: 56px;
-  height: 100vh;
+  height: 100%;
   position: sticky;
   top: 0;
-  background: ${theme.colors.panel_w};
+  background: ${theme.colors.bg};
   border-right: 1px solid rgba(0, 229, 255, 0.12);
   display: flex;
   flex-direction: column;
@@ -139,6 +147,24 @@ export const SidebarWrapper = styled.nav<{ $expanded?: boolean }>`
   gap: 2px;
   overflow: hidden;
   transition: width 0.25s ease;
+  box-shadow: 2px 0 16px rgba(0, 0, 0, 0.5);
+`;
+
+export const AppHeader = styled.header`
+  width: 100%;
+  height: 56px;
+  background: ${theme.colors.bg};
+  border-bottom: 1px solid rgba(0, 229, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 24px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 `;
 
 export const SidebarTitle = styled.span<{ $expanded: boolean }>`
@@ -169,7 +195,7 @@ export const NavItem = styled.button<{ $active: boolean; $expanded: boolean }>`
   border-left: 3px solid
     ${({ $active }) => ($active ? theme.colors.accent : "transparent")};
   color: ${({ $active }) =>
-    $active ? theme.colors.panelSoft : theme.colors.panelSoft};
+    $active ? theme.colors.text : theme.colors.textDim};
   font-family: ${theme.fonts.body};
   font-size: 14px;
   font-weight: ${({ $active }) => ($active ? "600" : "400")};
@@ -207,4 +233,111 @@ export const Section = styled.section`
   width: 100%;
   flex-shrink: 0;
   scroll-snap-align: start;
+`;
+
+export const Divider = styled.div<IDivider>`
+  width: 100%;
+  position: relative;
+
+  height: ${(props) => (props.variant === "basic" ? "auto" : "1px")};
+
+  ${(props) =>
+    props.variant === "basic" &&
+    `
+      border-bottom: 1px solid rgba(0, 200, 255, 0.2);
+    `}
+
+  ${(props) =>
+    props.variant === "gradient" &&
+    `
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 200, 255, 0.6),
+        transparent
+      );
+    `}
+
+  ${(props) =>
+    props.variant === "glow" &&
+    `
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 200, 255, 0.8),
+        transparent
+      );
+      box-shadow: 0 0 8px rgba(0, 200, 255, 0.4);
+    `}
+
+  ${(props) =>
+    props.variant === "dots" &&
+    `
+      background: linear-gradient(
+        90deg,
+        rgba(0, 200, 255, 0.6),
+        transparent
+      );
+
+      height: 1px;
+    `}
+
+  /* 🔵 Circulitos del lado derecho */
+  ${(props) =>
+    props.variant === "dots" &&
+    `
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+        width: 24px;
+        height: 6px;
+
+        background:
+          radial-gradient(circle, rgba(0,200,255,0.9) 2px, transparent 2px),
+          radial-gradient(circle, rgba(0,200,255,0.6) 2px, transparent 2px),
+          radial-gradient(circle, rgba(0,200,255,0.3) 2px, transparent 2px);
+
+        background-size: 6px 6px;
+        background-repeat: no-repeat;
+        background-position:
+          0px center,
+          8px center,
+          16px center;
+      }
+    `}
+`;
+export const HeaderLine = styled.div`
+  height: 2px;
+  width: 80px;
+
+  background: linear-gradient(90deg, rgba(0, 200, 255, 0.8), transparent);
+
+  box-shadow: 0 0 6px rgba(0, 200, 255, 0.4);
+`;
+
+export const HudCard = styled.div<IHudCard>`
+  position: relative;
+  padding: 20px;
+  border-radius: 12px;
+  width: ${(props) => props.Width || "100%"};
+  height: ${(props) => props.Height || "100%"};
+  background: rgba(255, 255, 255, 0.02);
+
+  /* Forma recortada */
+  clip-path: polygon(
+    12px 0%,
+    calc(100% - 12px) 0%,
+    100% 12px,
+    100% calc(100% - 12px),
+    calc(100% - 12px) 100%,
+    12px 100%,
+    0% calc(100% - 12px),
+    0% 12px
+  );
+
+  border: 1px solid rgba(0, 200, 255, 0.25);
 `;

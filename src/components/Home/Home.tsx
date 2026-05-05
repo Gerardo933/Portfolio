@@ -1,11 +1,12 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { ContainerFlex, Section } from "@/styles/style";
+import { AppHeader, ContainerFlex, Section } from "@/styles/style";
 import { ResumeInformation } from "@/components/Home/ResumeInformation";
 import { ExperienceSection } from "@/components/Home/ExperienceSection";
 import { Sidebar } from "@/components/Sidebar/Sidebar";
 import { SECTION_IDS } from "@/components/Sidebar/Constants.utils";
 import { ProfileSection } from "@/components/Home/ProfileSection";
+import { ContactContainer } from "@/components/Home/ContactContainer";
 
 export const Home = () => {
   const [activeSection, setActiveSection] = useState("profile");
@@ -41,31 +42,40 @@ export const Home = () => {
 
   return (
     <ContainerFlex
+      FlexDirection="column"
+      Height="100vh"
       JustifyContent="start"
       AlignItems="start"
-      FlexDirection="row"
-      Height="100vh"
-      BackGround="white"
     >
-      <Sidebar activeSection={activeSection} onNavClick={handleNavClick} />
+      <AppHeader>
+        <ContactContainer />
+      </AppHeader>
       <ContainerFlex
-        ref={scrollRef}
-        FlexDirection="column"
-        OverFlowY="scroll"
-        Height="100vh"
-        ScrollSnapType="y mandatory"
         JustifyContent="start"
         AlignItems="start"
+        FlexDirection="row"
+        Height="calc(100vh - 56px)"
       >
-        <Section id="profile">
-          <ProfileSection />
-        </Section>
-        <Section id="resume">
-          <ResumeInformation />
-        </Section>
-        <Section id="experience">
-          <ExperienceSection />
-        </Section>
+        <Sidebar activeSection={activeSection} onNavClick={handleNavClick} />
+        <ContainerFlex
+          ref={scrollRef}
+          FlexDirection="column"
+          OverFlowY="scroll"
+          Height="100%"
+          ScrollSnapType="y mandatory"
+          JustifyContent="start"
+          AlignItems="start"
+        >
+          <Section id="profile">
+            <ProfileSection />
+          </Section>
+          <Section id="resume">
+            <ResumeInformation />
+          </Section>
+          <Section id="experience">
+            <ExperienceSection />
+          </Section>
+        </ContainerFlex>
       </ContainerFlex>
     </ContainerFlex>
   );
